@@ -4,35 +4,21 @@
     <TargetFramework>net8.0</TargetFramework>
     <LangVersion>latest</LangVersion>
     <Nullable>enable</Nullable>
-
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
   </PropertyGroup>
 
   <ItemGroup>
-    <Reference Include="StardewModdingAPI">
-      <HintPath>../lib/StardewModdingAPI.dll</HintPath>
-    </Reference>
-
-    <Reference Include="StardewValley">
-      <HintPath>../lib/StardewValley.dll</HintPath>
-    </Reference>
-
-    <Reference Include="HarmonyLib">
-      <HintPath>../lib/0Harmony.dll</HintPath>
-    </Reference>
-
-    <Reference Include="Microsoft.Xna.Framework">
-      <HintPath>../lib/Microsoft.Xna.Framework.dll</HintPath>
-    </Reference>
-
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>../lib/Newtonsoft.Json.dll</HintPath>
-    </Reference>
+    <!-- SMAPI uses these NuGet packages -->
+    <PackageReference Include="StardewModdingAPI" Version="4.0.0" />
+    <PackageReference Include="StardewValley" Version="1.6.14" />
+    <PackageReference Include="0Harmony" Version="2.2.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="MonoGame.Framework.DesktopGL" Version="3.8.1.303" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="assets\**\*" CopyToOutputDirectory="Always" />
+    <None Include="assets\**" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="manifest.json" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
 </Project>
