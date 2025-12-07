@@ -1,10 +1,8 @@
-name: Build SMAPI Mod (Ubuntu)
+name: Build SMAPI Mod
 
 on:
   push:
-    branches: [ main ]
   pull_request:
-    branches: [ main ]
 
 jobs:
   build:
@@ -16,22 +14,16 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: 6.0.x
+          dotnet-version: "8.0.x"
 
-      - name: Restore NuGet packages
+      - name: Restore NuGet Packages
         run: dotnet restore MiniPhone.csproj
 
-      - name: Build and create mod zip
-        run: dotnet build MiniPhone.csproj --configuration Release
+      - name: Build Project
+        run: dotnet build MiniPhone.csproj --configuration Release --no-restore
 
-      - name: Find Release Zip File
-        id: find_zip
-        # Searches the build output directory for the automatically generated MiniPhone zip
-        run: echo "ZIP_FILE=$(ls MiniPhone/bin/Release/net6.0/MiniPhone-*.zip | head -1)" >> $GITHUB_OUTPUT
-        shell: bash
-
-      - name: Upload Mod Artifact
+      - name: Upload Mod Build
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ github.event.repository.name }}-Release
-          path: ${{ steps.find_zip.outputs.ZIP_FILE }}
+          name: MiniPhone
+          path: MiniPhone/bin/Release/net6.0/
