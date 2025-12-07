@@ -10,22 +10,23 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Reference Include="StardewModdingAPI">
-      <HintPath>lib/StardewModdingAPI.dll</HintPath>
-    </Reference>
-    <Reference Include="StardewValley">
-      <HintPath>lib/StardewValley.dll</HintPath>
-    </Reference>
-    <Reference Include="HarmonyLib">
-      <HintPath>lib/0Harmony.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Xna.Framework">
-      <HintPath>lib/Microsoft.Xna.Framework.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>lib/Newtonsoft.Json.dll</HintPath>
-    </Reference>
-  </ItemGroup>
+<ItemGroup>
+  <Reference Include="StardewModdingAPI">
+    <HintPath>lib/StardewModdingAPI.dll</HintPath>
+  </Reference>
+  <Reference Include="StardewValley">
+    <HintPath>lib/StardewValley.dll</HintPath>
+  </Reference>
+  <Reference Include="HarmonyLib">
+    <HintPath>lib/0Harmony.dll</HintPath>
+  </Reference>
+  <Reference Include="Microsoft.Xna.Framework">
+    <HintPath>lib/Microsoft.Xna.Framework.dll</HintPath>
+  </Reference>
+  <Reference Include="Newtonsoft.Json">
+    <HintPath>lib/Newtonsoft.Json.dll</HintPath>
+  </Reference>
+</ItemGroup>
+
 
 </Project>
