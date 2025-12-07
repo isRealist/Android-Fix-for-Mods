@@ -2,6 +2,7 @@ using MiniPhone.Calls;
 using MiniPhone.Config;
 using MiniPhone.Furniture;
 using MiniPhone.UI;
+using MiniPhone.Inventory;
 using StardewModdingAPI;
 using StardewModdingAPI.Events;
 
@@ -22,7 +23,6 @@ namespace MiniPhone
             Calls = new CallManager(this);
             Hud = new PhoneHudElement(this);
             new InventoryPhone(this);
-            new FurniturePatch();
 
             helper.Events.GameLoop.SaveLoaded += (_, __) => MiniPhoneFurniture.Register(helper);
             helper.Events.Content.AssetRequested += Calls.OnAssetRequested;
