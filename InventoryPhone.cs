@@ -1,6 +1,5 @@
 using StardewModdingAPI.Events;
 using StardewValley.Objects;
-using MiniPhone;
 
 namespace MiniPhone.Inventory
 {
@@ -36,3 +35,4 @@ namespace MiniPhone.Inventory
     }
 
 }
+
