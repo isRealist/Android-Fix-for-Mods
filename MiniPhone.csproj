@@ -30,7 +30,10 @@
       <HintPath>lib/Newtonsoft.Json.dll</HintPath>
     </Reference>
 
-    <PackageReference Include="SMAPI.Toolkit.CoreInterfaces" Version="4.3.20" />
+     <Reference Include="SMAPI.Toolkit.CoreInterfaces">
+      <HintPath>lib/<Reference Include="SMAPI.Toolkit.CoreInterfaces.dll</HintPath>
+    </Reference>
+
   </ItemGroup>
 
   <ItemGroup>
