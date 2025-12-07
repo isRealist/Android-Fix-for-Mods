@@ -28,11 +28,4 @@
     </Reference>
   </ItemGroup>
 
-  <!-- Copy assets into build output -->
-  <ItemGroup>
-    <None Update="assets\**\*">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-
 </Project>
