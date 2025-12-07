@@ -31,7 +31,7 @@
     </Reference>
 
      <Reference Include="SMAPI.Toolkit.CoreInterfaces">
-      <HintPath>lib/<Reference Include="SMAPI.Toolkit.CoreInterfaces.dll</HintPath>
+      <HintPath>lib/SMAPI.Toolkit.CoreInterfaces.dll</HintPath>
     </Reference>
 
   </ItemGroup>
