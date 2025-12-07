@@ -22,7 +22,7 @@ namespace MiniPhone.Config
             try
             {
                 var data = helper.GameContent.Load<Dictionary<string, string>>("Mods/MiniPhone/Config")
-                           ?? helper.Data.ReadJson<Dictionary<string, string>>("config.json") ?? new();
+                           ?? helper.Data.ReadJsonFile<Dictionary<string, string>>("config.json") ?? new();
 
                 TryParse(data, "ShowHudIcon", v => config.ShowHudIcon = bool.Parse(v));
                 TryParse(data, "IconSize", v => config.IconSize = int.Parse(v));
@@ -43,4 +43,5 @@ namespace MiniPhone.Config
             if (d.TryGetValue(k, out var v) && !string.IsNullOrWhiteSpace(v)) a(v);
         }
     }
+
 }
