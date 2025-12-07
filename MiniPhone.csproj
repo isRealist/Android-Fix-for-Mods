@@ -3,22 +3,15 @@
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <AssemblyName>MiniPhone</AssemblyName>
-    <RootNamespace>MiniPhone</RootNamespace>
-    <OutputType>Library</OutputType>
+    <RootNamespace>MiniPhone"
+
+    <EnableDefaultCompileItems>true</EnableDefaultCompileItems>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
-    
-    <ModFolderName>MiniPhone</ModFolderName>
-    <EnableModZip>True</EnableModZip>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Pathoschild.Stardew.ModBuildConfig" Version="4.1.1" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="assets\**" Exclude="assets\**\*.pdb;assets\**\*.bak;assets\**\*.cs" CopyToOutputDirectory="PreserveNewest" />
-    <Content Include="manifest.json" CopyToOutputDirectory="PreserveNewest" />
+    <PackageReference Include="Pathoschild.Stardew.ModBuildConfig" Version="5.8.0" />
   </ItemGroup>
 
 </Project>
