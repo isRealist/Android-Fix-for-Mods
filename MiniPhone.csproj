@@ -25,6 +25,10 @@
     <Reference Include="Microsoft.Xna.Framework">
       <HintPath>lib/Microsoft.Xna.Framework.dll</HintPath>
     </Reference>
+    
+    <Reference Include="MonoGame.Framework">
+      <HintPath>lib/MonoGame.Framework.dll</HintPath>
+    </Reference>
 
     <Reference Include="Newtonsoft.Json">
       <HintPath>lib/Newtonsoft.Json.dll</HintPath>
