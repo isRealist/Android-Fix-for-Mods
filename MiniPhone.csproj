@@ -21,10 +21,6 @@
     <Reference Include="HarmonyLib">
       <HintPath>lib/0Harmony.dll</HintPath>
     </Reference>
-
-    <Reference Include="Microsoft.Xna.Framework">
-      <HintPath>lib/Microsoft.Xna.Framework.dll</HintPath>
-    </Reference>
     
     <Reference Include="MonoGame.Framework">
       <HintPath>lib/MonoGame.Framework.dll</HintPath>
