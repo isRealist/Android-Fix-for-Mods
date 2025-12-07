@@ -1,5 +1,4 @@
 using StardewModdingAPI;
-using MiniPhone;
 
 
 namespace MiniPhone.Furniture
@@ -31,4 +30,5 @@ namespace MiniPhone.Furniture
         }
     }
 }
+
 
