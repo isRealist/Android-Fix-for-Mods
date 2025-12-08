@@ -18,7 +18,6 @@ namespace MiniPhone.UI
             this.mod = mod;
             mod.Helper.Events.Display.RenderedHud += OnRenderedHud;
             mod.Helper.Events.Input.ButtonPressed += OnButtonPressed;
-            mod.Helper.Events.Input.TouchTap += OnTouchTap;
         }
 
         private void OnRenderedHud(object? sender, RenderedHudEventArgs e)
@@ -53,19 +52,6 @@ namespace MiniPhone.UI
                     mod.Helper.Input.Suppress(e.Button);
                     mod.Calls.TriggerRandomCall();
                 }
-            }
-        }
-
-        private void OnTouchTap(object? sender, TouchTapEventArgs e)
-        {
-            if (!mod.Config.ShowHudIcon || !InventoryPhone.HasPhoneInInventory())
-                return;
-
-            var tapPos = e.Position;
-
-            if (drawRect.Contains((int)tapPos.X, (int)tapPos.Y))
-            {
-                mod.Calls.TriggerRandomCall();
             }
         }
     }
