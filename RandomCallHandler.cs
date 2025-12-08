@@ -1,4 +1,6 @@
+using StardewModdingAPI;
 using StardewModdingAPI.Events;
+using StardewValley;
 
 namespace MiniPhone
 {
@@ -15,7 +17,8 @@ namespace MiniPhone
 
         private void OnUpdateTicked(object? sender, UpdateTickedEventArgs e)
         {
-            if (Game1.activeClickableMenu != null || !Context.IsPlayerFree) return;
+            if (Game1.activeClickableMenu != null || !Context.IsPlayerFree) 
+                return;
 
             int ticks = mod.Config.CheckIntervalSeconds * 60;
             if (++counter >= ticks)
