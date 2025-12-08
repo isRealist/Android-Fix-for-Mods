@@ -24,12 +24,14 @@ namespace MiniPhone.UI
             var mod = MiniPhoneMod.Instance;
             if (!mod.Config.ShowHudIcon || Game1.activeClickableMenu != null) return;
 
-            icon ??= mod.Helper.GameContent.Load<Texture2D>("Mods/MiniPhone/Assets/Phone16.png");
+            if (icon == null)
+                icon = mod.Helper.ModContent.Load<Texture2D>("Assets/Phone16.png");
+
             if (icon == null) return;
 
             if (!iconLogged)
             {
-                mod.Monitor.Log($"[MiniPhone] Icon loaded: {icon.Width}x{icon.Height}px", LogLevel.Info);
+                mod.Monitor.Log("[MiniPhone] Icon loaded: " + icon.Width + "x" + icon.Height + "px", LogLevel.Info);
                 iconLogged = true;
             }
 
@@ -55,4 +57,3 @@ namespace MiniPhone.UI
         }
     }
 }
-
