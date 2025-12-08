@@ -18,6 +18,7 @@ namespace MiniPhone.UI
             this.mod = mod;
             mod.Helper.Events.Display.RenderedHud += OnRenderedHud;
             mod.Helper.Events.Input.ButtonPressed += OnButtonPressed;
+            mod.Helper.Events.Input.TouchTap += OnTouchTap;
         }
 
         private void OnRenderedHud(object? sender, RenderedHudEventArgs e)
@@ -26,7 +27,8 @@ namespace MiniPhone.UI
                 return;
 
             icon ??= mod.Helper.GameContent.Load<Texture2D>("Mods/MiniPhone/Assets/PhoneIcon");
-            if (icon == null) return;
+            if (icon == null)
+                return;
 
             int size = mod.Config.IconSize;
             int x = Game1.viewport.Width - size - 20 + mod.Config.HudOffsetX;
@@ -42,7 +44,7 @@ namespace MiniPhone.UI
             if (!mod.Config.ShowHudIcon || !InventoryPhone.HasPhoneInInventory())
                 return;
 
-            if (e.Button == SButton.Action || e.Button == SButton.MouseLeft || e.Button == SButton.MouseRight)
+            if (e.Button == SButton.MouseLeft || e.Button == SButton.MouseRight)
             {
                 var cursor = mod.Helper.Input.GetCursorPosition().ScreenPixels;
 
@@ -51,6 +53,19 @@ namespace MiniPhone.UI
                     mod.Helper.Input.Suppress(e.Button);
                     mod.Calls.TriggerRandomCall();
                 }
+            }
+        }
+
+        private void OnTouchTap(object? sender, TouchTapEventArgs e)
+        {
+            if (!mod.Config.ShowHudIcon || !InventoryPhone.HasPhoneInInventory())
+                return;
+
+            var tapPos = e.Position;
+
+            if (drawRect.Contains((int)tapPos.X, (int)tapPos.Y))
+            {
+                mod.Calls.TriggerRandomCall();
             }
         }
     }
